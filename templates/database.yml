@@ -1,0 +1,5 @@
+development:
+  adapter: oracle_enhanced
+  database: <dbhost>:<port>/<sid>
+  username: <user>
+  password: <pwd>

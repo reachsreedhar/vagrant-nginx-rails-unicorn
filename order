@@ -1,0 +1,5 @@
+#!/bin/bash
+
+ls -1 | grep -v log$ | grep -v order | awk '{print "touch "$1}' > /tmp/o.bash
+chmod +x /tmp/o.bash
+/tmp/o.bash

@@ -1,0 +1,14 @@
+source 'https://rubygems.org'
+
+ruby '2.3.1'
+
+gem 'rails', '4.2.7.1'
+
+# DB
+gem 'activerecord-oracle_enhanced-adapter', '~> 1.6.7'
+gem 'composite_primary_keys', '~> 8.1.4'
+gem 'ruby-oci8', '~> 2.2.2'
+
+# Use unicorn as the app server
+gem 'unicorn', '~> 5.2.0'
+

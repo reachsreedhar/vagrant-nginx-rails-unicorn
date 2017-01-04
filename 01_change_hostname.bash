@@ -20,7 +20,6 @@ sed -i "s/localhost.localdomain/${HN}/" ${NW_FILE}
 hostname ${HN}
 
 HOSTS_FILE=/etc/hosts
-HOSTS_FILE=/tmp/hosts
 if [ $(grep ${HN} ${HOSTS_FILE} | wc -l) -le 0 ];then
   echo "Updating ${HOSTS_FILE} for ${HN}"
   sed -i "s/localhost4.localdomain4/localhost4.localdomain4 ${HN}/" ${HOSTS_FILE}

@@ -11,6 +11,15 @@ fi
 
 . ~/.bashrc
 
+ORACLI_TGZ=/vagrant/shared/oracle_11.2.0.4_client.tgz
+if [ ! -f ${ORACLI_TGZ} ];then
+  aws s3 cp s3://capterra-development/oracle/oracle_11.2.0.4_client.tgz ${ORACLI_TGZ}
+fi
+if [ ! -d /vagrant/shared/oracle ];then
+  cd /vagrant/shared
+  tar -zxvf ${ORACLI_TGZ}
+fi
+
 which ruby
 
 APP_DIR=/vagrant/shared/${APP_NAME}
@@ -19,12 +28,10 @@ if [ ! -f ~vagrant/.gemrc ];then
   cp templates/gemrc ~vagrant/.gemrc
 fi
 
-if [ "x$(which bundle | awk -F\/ '{print $NF}')x" != "xbundlex" ];then
-  gem install bundler
-fi
-
+cd templates
+gem install bundler
 bundle 
-
+cd -
 cd /vagrant/shared
 if [ ! -d ${APP_DIR} ];then
   rails new ${APP_NAME} -d oracle

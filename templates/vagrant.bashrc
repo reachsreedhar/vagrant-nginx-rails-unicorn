@@ -9,7 +9,7 @@ fi
 source /usr/local/share/chruby/chruby.sh
 source /usr/local/share/chruby/auto.sh
 
-export ORACLE_HOME=/vagrant/shared/oracle_client/instantclient_11_2
+export ORACLE_HOME=/vagrant/shared/oracle
 export LD_LIBRARY_PATH=${ORACLE_HOME}:${LD_LIBRARY_PATH}
 export PATH=/vagrant/shared/bin:${ORACLE_HOME}:${PATH}
 export TNS_ADMIN=/vagrant/shared/tns

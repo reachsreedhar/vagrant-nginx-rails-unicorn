@@ -30,7 +30,7 @@ if [ ! -f /usr/bin/nginx ];then
 fi
 
 if [ ! -f /etc/nginx/conf.d/${NGINX_CONFIG_FILE} ];then
-  sudo ln -s ${NGINX_CONFIG_FILE} /etc/nginx/conf.d/${NGINX_CONFIG_FILE}
+  sudo ln -s ${NGINX_CONFIG_FILE} /etc/nginx/conf.d/${APP_NAME}-nginx.conf
 fi
 
 sudo service nginx stop

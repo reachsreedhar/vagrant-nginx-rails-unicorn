@@ -67,10 +67,14 @@ fi
 if [ ! -d ${APP_ROOT}/oracle ];then
   cd ${APP_ROOT}
   tar -zxvf ${ORACLI_TGZ}
+  cd -
 fi
 
 if [ ! -f ${APP_ROOT}/.ruby-version ];then
+  echo "${APP_ROOT}/.ruby-version not found. Copying it from templates directory"
   cp templates/.ruby-version ${APP_ROOT}
+else
+  echo "${APP_ROOT}/.ruby-version already exists!"
 fi
 
 pwd

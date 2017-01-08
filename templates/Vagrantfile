@@ -1,0 +1,18 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+  config.vm.box = "centos/6"
+  config.ssh.insert_key = false
+
+  #Example#config.vm.network "forwarded_port", guest: 81, host: 8081
+  config.vm.network "forwarded_port", guest: <Nginx port>, host: <Host mapped Nginx port>
+
+  #Example#config.vm.network "forwarded_port", guest: 3001, host: 3001
+  config.vm.network "forwarded_port", guest: <Rails port>, host: <Host mapped Rails port>
+
+  #Example#config.vm.network "private_network", ip: "192.168.33.110"
+  config.vm.network "private_network", ip: "<IP Address>"
+
+  config.vm.synced_folder "/Users/sreedhar/kcs/vagrant/<VM Name>/shared", "/vagrant/shared", id: "vagrant", :mount_options => ["uid=500,gid=500"]
+end

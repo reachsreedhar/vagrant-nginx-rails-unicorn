@@ -10,6 +10,5 @@ SE_FILE=/etc/selinux/config
 
 TO="SELINUX=disabled"
 FROM="SELINUX=enforcing"
-set -x
 sed -i "s/${FROM}/${TO}/" ${SE_FILE}
-echo;echo " **** Reload the vagrant machine ****";echo
+echo;echo "        **** Reload the vagrant machine ****";echo;echo

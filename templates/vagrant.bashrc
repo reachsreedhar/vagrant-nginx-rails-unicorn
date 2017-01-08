@@ -16,3 +16,8 @@ export TNS_ADMIN=/vagrant/shared/tns
 
 alias r='cd /vagrant/shared/dbaexpert;rails s -b 0.0.0.0 -p 3030'
 alias tmanta='ssh -f -N -L 3365:127.0.0.1:1521 manta'
+
+export DB_STORAGE_USER=capstorage
+export DB_STORAGE_PASSWORD=capterra12
+export DB_USERNAME=capterra
+export DB_PASSWORD=c4pt3rra12
